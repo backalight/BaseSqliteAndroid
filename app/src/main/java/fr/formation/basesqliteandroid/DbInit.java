@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public abstract class DbInit extends SQLiteOpenHelper {
+public  class DbInit extends SQLiteOpenHelper {
 
     public DbInit(Context ctxt) {
         super(ctxt, "annuaire", null, 1);//annuaire est le nom de la base de données. Le numero de version est fixé a un
