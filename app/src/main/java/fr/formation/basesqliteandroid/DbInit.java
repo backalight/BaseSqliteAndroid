@@ -6,8 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public abstract class DbInit extends SQLiteOpenHelper {
 
-    public DbInit(Context ctxt, String dbName, int version) {
-        super(ctxt, dbName, null, version);
+    public DbInit(Context ctxt) {
+        super(ctxt, "annuaire", null, 1);//annuaire est le nom de la base de données. Le numero de version est fixé a un
     }
 
 
@@ -24,9 +24,10 @@ public abstract class DbInit extends SQLiteOpenHelper {
         db.execSQL(sql);
     }
 
-    }
+//cett methode est executée une seule fois pour créer la base de données
 
     @Override
+    //celle ci est executer seulement si la version du fichier est differentes à celle du constructeur
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
